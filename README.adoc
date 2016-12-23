@@ -1,0 +1,10 @@
+= avg_price
+
+== general
+
+A command line c-application, that calculates an average price, based on given shares/price data.
+
+== usage
+
+~% avg_price --dataset="10,5.00;20,2.00;30,5.00"  +
+4.0
