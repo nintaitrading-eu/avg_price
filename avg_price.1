@@ -1,0 +1,31 @@
+.TH AVG_PRICE 1 avg_price\-VERSION
+.SH NAME
+avg_price \- calculate average price, based on a dataset of shares/prices.
+.SH SYNOPSIS
+.B avg_price
+.RB [ \-v ]
+.SH DEPENDS ON
+libcalculatorfinance
+More info at https://github.com/rockwolf/libcalculatorfinance/.
+.SH DESCRIPTION
+avg_price is a c program, that parses a dataset of shares/price information and calculates the average price.
+The dataset is a string, in the following form:
+"shares_int1,price_double1;shares_int2,price_double2"
+.SH OPTIONS
+.TP
+.B \-v
+Prints version information to standard output, then exits.
+.B \-\-dataset="shares_int1,price_double1;shares_int2,price_double2"
+Used to specify the ledger dat file to query.
+.SH USAGE
+See example section.
+To see the complete usage information, start avg_price without options
+or use:
+avg_price -h
+.SH SEE ALSO
+.BR libcalculatorfinance (1)
+.SH BUGS
+TBD
+.SH EXAMPLES
+~% avg_price --dataset="10,5.00;20,2.00;30,5.00"
+4.0
