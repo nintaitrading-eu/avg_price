@@ -40,15 +40,13 @@ int main(int argc, char *argv[])
 
     l_verbose = args.verbose ? 1 : 0;
     l_dataset = args.dataset ? args.dataset : "";
+    trim_whitespace(l_dataset, l_dataset, SIZE_MAX);
 
     /*
      * Preparation of data.
      */
-    uint32_t l_status = EXIT_SUCCESS; // Note: To make sure the cleanup runs.
-    print_if_verbose(&l_verbose, ">>> Calculating data...\n");
     printf("Result:\n%.2lf\n", calculate_avg_price(&l_verbose, 1, l_dataset));
-    print_if_verbose(&l_verbose, ">>> Done.\n");
-    return l_status;
+    return EXIT_SUCCESS;
 }
 
 static double calculate_avg_price(uint32_t *a_verbose, uint32_t a_nargs, ...)
